@@ -172,8 +172,8 @@ export class ReadingCompletionChartService implements OnDestroy {
   private lastCalculatedStats: CompletionStats[] = [];
 
   constructor() {
-    this.initThemeObserver();
-	this.bookService.bookState$
+  	this.initThemeObserver();
+    this.bookService.bookState$
       .pipe(
         filter(state => state.loaded),
         first(),
@@ -196,7 +196,7 @@ export class ReadingCompletionChartService implements OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-	if (this.themeObserver) {
+    if (this.themeObserver) {
       this.themeObserver.disconnect();
     }
   }

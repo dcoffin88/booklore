@@ -109,8 +109,8 @@ export class LanguageDistributionChartService implements OnDestroy {
   public readonly languageChartData$: Observable<LanguageChartData> = this.languageChartDataSubject.asObservable();
 
   constructor() {
-    this.initThemeObserver();
-	this.bookService.bookState$
+  	this.initThemeObserver();
+    this.bookService.bookState$
       .pipe(
         filter(state => state.loaded),
         first(),
@@ -133,7 +133,7 @@ export class LanguageDistributionChartService implements OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-	if (this.themeObserver) {
+    if (this.themeObserver) {
       this.themeObserver.disconnect();
     }
   }

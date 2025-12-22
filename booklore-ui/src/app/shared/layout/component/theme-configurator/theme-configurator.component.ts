@@ -38,10 +38,9 @@ export class ThemeConfiguratorComponent {
   readonly faviconService = inject(FaviconService);
 
   readonly surfaces = this.configService.surfaces;
-  
+
   readonly selectedAppearance = computed(() => this.configService.appState().appearance ?? 'dark');
   readonly isLightMode = computed(() => this.selectedAppearance() === 'light');
-
   readonly selectedPrimaryColor = computed(() => this.configService.appState().primary);
   readonly selectedSurfaceColor = computed(() => this.configService.appState().surface);
 
@@ -74,7 +73,7 @@ export class ThemeConfiguratorComponent {
       }))
     );
   });
-  
+
   updateAppearance(mode: 'light' | 'dark') {
     if (this.selectedAppearance() === mode) return;
 	this.configService.appState.update((state) => ({

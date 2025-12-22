@@ -46,7 +46,7 @@ const CHART_DEFAULTS = () => ({
   borderColor: themeTokens().modeColor,
   borderWidth: 2,
   hoverBorderWidth: 3,
-  hoverBorderColor: themeTokens().modeColor,
+  hoverBorderColor: themeTokens().modeColor
 });
 
 type AuthorSeriesChartData = ChartData<'polarArea', number[], string>;
@@ -417,11 +417,11 @@ export class AuthorSeriesPortfolioChartService implements OnDestroy {
       return {
         text: `${label} (${dataValues[index]})`,
         fillStyle: (dataset.backgroundColor as string[])[index],
-        strokeStyle: '#ffffff',
+        strokeStyle: themeTokens().modeColor,
         lineWidth: 1,
         hidden: !isVisible,
         index,
-        fontColor: '#ffffff'
+        fontColor: themeTokens().modeColor
       };
     });
   }

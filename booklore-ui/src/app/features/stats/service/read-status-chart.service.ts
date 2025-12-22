@@ -108,7 +108,7 @@ export class ReadStatusChartService implements OnDestroy {
 
   constructor() {
     this.initThemeObserver();
-	this.bookService.bookState$
+    this.bookService.bookState$
       .pipe(
         filter(state => state.loaded),
         first(),
@@ -131,7 +131,7 @@ export class ReadStatusChartService implements OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-	if (this.themeObserver) {
+    if (this.themeObserver) {
       this.themeObserver.disconnect();
     }
   }
@@ -294,11 +294,11 @@ export class ReadStatusChartService implements OnDestroy {
       return {
         text: `${label} (${dataValues[index]})`,
         fillStyle: (dataset.backgroundColor as string[])[index],
-        strokeStyle: '#ffffff',
+        strokeStyle: themeTokens().modeColor,
         lineWidth: 1,
         hidden: !isVisible,
         index,
-        fontColor: '#ffffff'
+        fontColor: themeTokens().modeColor
       };
     });
   }

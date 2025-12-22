@@ -150,8 +150,8 @@ export class PageCountChartService implements OnDestroy {
     this.pageCountChartDataSubject.asObservable();
 
   constructor() {
-    this.initThemeObserver();
-	this.bookService.bookState$
+  	this.initThemeObserver();
+    this.bookService.bookState$
       .pipe(
         filter(state => state.loaded),
         first(),
@@ -174,7 +174,7 @@ export class PageCountChartService implements OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-	if (this.themeObserver) {
+    if (this.themeObserver) {
       this.themeObserver.disconnect();
     }
   }

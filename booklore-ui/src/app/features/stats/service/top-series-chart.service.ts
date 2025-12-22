@@ -154,8 +154,8 @@ export class TopSeriesChartService implements OnDestroy {
   public readonly seriesChartData$: Observable<SeriesChartData> = this.seriesChartDataSubject.asObservable();
 
   constructor() {
-    this.initThemeObserver();
-	this.bookService.bookState$
+  	this.initThemeObserver();
+    this.bookService.bookState$
       .pipe(
         filter(state => state.loaded),
         first(),
@@ -178,7 +178,7 @@ export class TopSeriesChartService implements OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-	if (this.themeObserver) {
+    if (this.themeObserver) {
       this.themeObserver.disconnect();
     }
   }

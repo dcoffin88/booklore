@@ -37,7 +37,7 @@ interface PublicationYearStats {
 const CHART_COLORS = {
   primary: '#4ECDC4',
   primaryBackground: 'rgba(78, 205, 196, 0.1)',
-  border: '#ffffff'
+  border: themeTokens().modeColor
 } as const;
 
 const CHART_DEFAULTS = () => ({
@@ -173,7 +173,7 @@ export class PublicationYearChartService implements OnDestroy {
 
   constructor() {
     this.initThemeObserver();
-	this.bookService.bookState$
+    this.bookService.bookState$
       .pipe(
         filter(state => state.loaded),
         first(),
@@ -196,7 +196,7 @@ export class PublicationYearChartService implements OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-	if (this.themeObserver) {
+    if (this.themeObserver) {
       this.themeObserver.disconnect();
     }
   }

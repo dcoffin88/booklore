@@ -118,7 +118,7 @@ export class BookQualityScoreChartService implements OnDestroy {
   public readonly qualityChartData$: Observable<QualityChartData> = this.qualityChartDataSubject.asObservable();
 
   constructor() {
-	this.initThemeObserver();
+  	this.initThemeObserver();
     this.bookService.bookState$
       .pipe(
         filter(state => state.loaded),
@@ -142,7 +142,7 @@ export class BookQualityScoreChartService implements OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-	if (this.themeObserver) {
+    if (this.themeObserver) {
       this.themeObserver.disconnect();
     }
   }

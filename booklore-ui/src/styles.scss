@@ -50,28 +50,3 @@ html {
 .p-inputchips input.p-inputtext {
   width: 100% !important;
 }
-
-:host-context(:root:not(.p-dark)) {
-  body {
-    background:
-	  radial-gradient(120% 70% at 50% 0, #f0f4ff 0%, transparent 55%),
-	  linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
-  }
-  
-  .p-card,
-  .p-panel,
-  .p-dialog .p-dialog-content,
-  .layout-sidebar,
-  .layout-topbar,
-  .book-browser-header,
-  .book-card {
-    background: var(--card-background);
-	border: 1px solid var(--border-color);
-	box-shadow: var(--shadow-soft);
-	backdrop-filter: blur(8px);
-  }
-  
-  .p-datatable .p-datatable-tbody > tr:hover > td {
-    background-color: var(--surface-hover);
-  }
-}

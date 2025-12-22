@@ -105,7 +105,7 @@ export class BookTypeChartService implements OnDestroy {
     this.bookTypeChartDataSubject.asObservable();
 
   constructor() {
-	this.initThemeObserver();
+  	this.initThemeObserver();
     this.bookService.bookState$
       .pipe(
         filter(state => state.loaded),
@@ -129,7 +129,7 @@ export class BookTypeChartService implements OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-	if (this.themeObserver) {
+    if (this.themeObserver) {
       this.themeObserver.disconnect();
     }
   }

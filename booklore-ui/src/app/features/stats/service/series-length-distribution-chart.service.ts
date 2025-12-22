@@ -111,13 +111,13 @@ export class SeriesLengthDistributionChartService implements OnDestroy {
 
   constructor() {
     this.initThemeObserver();
-	this.initializeChartDataSubscription();
+    this.initializeChartDataSubscription();
   }
 
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-	if (this.themeObserver) {
+    if (this.themeObserver) {
       this.themeObserver.disconnect();
     }
   }
