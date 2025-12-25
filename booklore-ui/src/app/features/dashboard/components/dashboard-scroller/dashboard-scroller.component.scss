@@ -154,6 +154,10 @@
   scrollbar-color: var(--primary-color) rgba(20, 20, 30, 0.5);
 }
 
+:host-context(:root:not(.p-dark)) .dashboard-scroller-infinite {
+  scrollbar-color: var(--primary-color) rgba(235, 235, 240, 0.5);
+}
+
 .dashboard-scroller-card {
   height: 200px;
   width: 116px;
