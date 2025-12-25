@@ -35,6 +35,10 @@ html {
   scrollbar-color: rgba(128, 128, 128, 0.5) rgba(0, 0, 0, 0.1);
 }
 
+:host-context(:root:not(.p-dark)) html {
+  scrollbar-color: var(--primary-color) rgba(235, 235, 240, 0.5);
+}
+
 .p-toast {
   top: 4rem !important;
 }
